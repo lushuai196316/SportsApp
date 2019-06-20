@@ -16,4 +16,6 @@ public interface UserDao {
     public User findByName(String name) ;
 
     public User checkUser(@Param("username") String username, @Param("password") String password) ;
+
+    void addUser(String username, String password);
 }

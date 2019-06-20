@@ -7,4 +7,6 @@ import com.qfedu.pojo.User;
  */
 public interface UserService {
     User checkUser(String username, String password);
+
+    void addUser(String username, String password);
 }

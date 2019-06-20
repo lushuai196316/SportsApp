@@ -26,8 +26,18 @@ public class UserController {
     }*/
 
     @RequestMapping("/register.do")
+    @ResponseBody
     public JsonBean login(String username, String password){
-          return null;
+        // 验证用户名是否存在
+        User user = userService.checkUser(username, null);
+        if(user!=null){
+                //不存在
+            userService.addUser(username,password);
+            return new JsonBean(0,"注册成功");
+        }else {
+            return new JsonBean(1,"用户名已存在");
+        }
+
     }
     @Autowired
     private UserService userService;
