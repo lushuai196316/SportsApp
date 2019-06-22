@@ -1,5 +1,6 @@
 package com.qfedu.dao;
 
+import com.qfedu.pojo.SportLable;
 import com.qfedu.pojo.User;
 import org.apache.ibatis.annotations.Param;
 
@@ -15,7 +16,13 @@ public interface UserDao {
 
     public User findByName(String name) ;
 
-    public User checkUser(@Param("username") String username, @Param("password") String password) ;
+    public User checkUser(@Param("username")String username, @Param("password")String password) ;
 
-    void addUser(String username, String password);
+    void addUser(@Param("username")String username, @Param("password")String password);
+
+    void modifierUser(User user1);
+
+    void insertLables(@Param("id") Integer id, @Param("lids") Integer[] lids);
+
+    List<SportLable> showLable();
 }

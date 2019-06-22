@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qfedu.dao.CourseinfoDao">
+    <resultMap id="CourseinfoMap" type="com.qfedu.pojo.Courseinfo">
+        <id column="id" property="cid"></id>
+        <result column="iname" property="iname"></result>
+        <result column="actionNum" property="actionNum"></result>
+        <result column="cycleNum" property="cycleNum"></result>
+        <result column="trainTime" property="trainTime"></result>
+    </resultMap>
+    </mapper>

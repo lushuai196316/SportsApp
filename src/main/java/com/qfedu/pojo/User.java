@@ -1,16 +1,35 @@
 package com.qfedu.pojo;
 
 public class User {
-    private Integer uid;
+    private Integer id;
     private String username;
     private String password;
+    private String nickname;
+    private Integer picId;
+    private String sex;
+    private Integer height;
+    private Double weight;
 
-    public Integer getUid() {
-        return uid;
+    public User() {
     }
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public User(Integer id, String username, String password, String nickname, Integer picId, String sex, Integer height, Double weight) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.nickname = nickname;
+        this.picId = picId;
+        this.sex = sex;
+        this.height = height;
+        this.weight = weight;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -27,5 +46,59 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public Integer getPicId() {
+        return picId;
+    }
+
+    public void setPicId(Integer picId) {
+        this.picId = picId;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public Integer getHeight() {
+        return height;
+    }
+
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", picId=" + picId +
+                ", sex='" + sex + '\'' +
+                ", height=" + height +
+                ", weight=" + weight +
+                '}';
     }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qfedu.dao.SportCourseDao">
+    <resultMap id="courseMap" type="com.qfedu.pojo.SportCourse">
+        <id column="id" property="id"></id>
+        <result column="cname" property="cname"></result>
+        <result column="trainNum" property="trainNum"></result>
+        <collection property="courseinfoList" ofType="com.qfedu.pojo.Courseinfo">
+            <id column="iid" property="iid"></id>
+            <result column="iname" property="iname"></result>
+            <result column="actionNum" property="actionNum"></result>
+            <result column="cycleNum" property="cycleNum"></result>
+            <result column="trainTime" property="trainTime"></result>
+        </collection>
+    </resultMap>
+
+    <select id="selectCourseById" parameterType="Integer" resultMap="courseMap">
+      SELECT A.*,i.* FROM (select c.* from user u
+            LEFT JOIN userlable ul on ul.uid=u.id
+            LEFT JOIN sportlabel l on ul.lid=l.id
+            LEFT JOIN lablecourse lc on l.id=lc.lid
+            LEFT JOIN sportcourse c on lc.cid = c.id
+            where u.id=#{id} ORDER BY c.id limit 0,1) A
+            LEFT JOIN course_info ci on A.id=ci.cid
+            LEFT JOIN courseinfo i on ci.iid=i.iid
+    </select>
+</mapper>

@@ -8,7 +8,7 @@
 	<select id="checkUser" parameterType="map" resultType="user">
 		SELECT * from user
 		<where>
-			<if test="username!=null and username !=''">
+			<if test="username!=null and username!=''">
 				username=#{username}
 			</if>
 			<if test="password !=null and password !=''">
@@ -21,4 +21,39 @@
 		INSERT INTO user (username,password) VALUE (#{username},#{password})
 	</select>
 
+    <update id="modifierUser" parameterType="user">
+		UPDATE user
+		<set>
+			<if test="password!=null and password !=''">
+				password=#{password}
+			</if>
+			<if test="nickname!=null and nickname !=''">
+				nickname=#{nickname}
+			</if>
+			<if test="picId!=null and picId !=''">
+				picId=#{picId}
+			</if>
+			<if test="sex!=null and sex !=''">
+				sex=#{sex}
+			</if>
+			<if test="height!=null and height !=''">
+				height=#{height}
+			</if>
+			<if test="weight!=null and weight !=''">
+				weight=#{weight}
+			</if>
+		</set>
+		WHERE username=#{username}
+	</update>
+
+	<insert id="insertLables">
+		INSERT INTO userlable VALUES
+		<foreach collection="lids" item="lid" index="index" separator="," >
+			(#{id},#{lid})
+		</foreach>
+	</insert>
+
+	<select id="showLable" resultType="com.qfedu.pojo.SportLable">
+		SELECT * from  sportlabel
+	</select>
 </mapper>
