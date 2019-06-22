@@ -68,14 +68,14 @@ public class UserController {
     }
 
     static String verCode = null;
-
+    //获得验证码
     @RequestMapping("/getVerCode.do")
     @ResponseBody
     public String getVerCode() {
         verCode = suij.getVerCode();
         return verCode;
     }
-
+    //修改密码
     @RequestMapping("/modifierPassword.do")
     @ResponseBody
     public JsonBean modifierPassword(String verCode1, User user1) {
@@ -92,7 +92,7 @@ public class UserController {
             return new JsonBean(2, "验证码输入有误");
         }
     }
-
+    //添加用户别的信息
     @RequestMapping("/modifierUser.do")
     @ResponseBody
     public JsonBean modifierUser(User user, @RequestParam("file") MultipartFile file) {
@@ -106,14 +106,14 @@ public class UserController {
         userService.modifierUser(user);
         return new JsonBean(0, "添加成功");
     }
-
+     //展示运动标签
     @RequestMapping("/showLable.do")
     @ResponseBody
     public JsonBean showLable() {
         List<SportLable> sportLableList = userService.showLable();
         return new JsonBean(0, sportLableList);
     }
-
+    //选择运动标签，并且根据用户id,选择合适的课程
     @RequestMapping("/chooseLable.do")
     @ResponseBody
     public JsonBean chooseLable(Integer id, Integer[] lids) {
