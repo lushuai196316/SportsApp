@@ -53,6 +53,7 @@ public class GoodsController {
 
     //商城图片轮播
     @RequestMapping("/showPicture.do")
+    @ResponseBody
     public JsonBean showPicture(){
         List<Picture> pictureList = pictureService.showPicture();
         return new JsonBean(0,pictureList);
