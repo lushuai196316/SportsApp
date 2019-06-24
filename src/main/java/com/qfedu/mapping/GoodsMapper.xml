@@ -12,6 +12,7 @@
         <result column="saleNum" property="saleNum"></result>
         <result column="brand" property="brand"></result>
         <result column="material" property="material"></result>
+        <result column="tid" property="tid"></result>
         <result column="pid" property="pid"></result>
         <association property="goodsType" resultMap="com.qfedu.dao.GoodsTypeDao.goodsTypeMap"></association>
     </resultMap>
