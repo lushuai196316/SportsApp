@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class GoodsController {
 
-    @Autowired
+    @Autowired(required = false)
     private GoodsService goodsService;
 
 }
