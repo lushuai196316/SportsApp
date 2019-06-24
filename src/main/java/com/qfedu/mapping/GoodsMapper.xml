@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qfedu.dao.GoodsDao">
+    <resultMap id="goodsMap" type="goods">
+        <id column="gid" property="gid"></id>
+        <result column="gname" property="gname"></result>
+        <result column="detail" property="detail"></result>
+        <result column="price" property="price"></result>
+        <result column="express" property="express"></result>
+        <result column="saleNum" property="saleNum"></result>
+        <result column="brand" property="brand"></result>
+        <result column="material" property="material"></result>
+        <result column="tid" property="tid"></result>
+        <result column="pid" property="pid"></result>
+    </resultMap>
+    </mapper>

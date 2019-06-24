@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qfedu.dao.AccountDao">
+    <resultMap id="accountMap" type="account">
+        <id column="aid" property="aid"></id>
+        <result column="aname" property="aname"></result>
+        <result column="card" property="card"></result>
+        <result column="apassword" property="apassword"></result>
+        <result column="balance" property="balance"></result>
+    </resultMap>
+    </mapper>

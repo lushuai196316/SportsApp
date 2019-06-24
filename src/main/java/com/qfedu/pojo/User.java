@@ -9,11 +9,13 @@ public class User {
     private String sex;
     private Integer height;
     private Double weight;
+    private Double balance;
+
 
     public User() {
     }
 
-    public User(Integer id, String username, String password, String nickname, Integer picId, String sex, Integer height, Double weight) {
+    public User(Integer id, String username, String password, String nickname, Integer picId, String sex, Integer height, Double weight, Double balance) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -22,6 +24,7 @@ public class User {
         this.sex = sex;
         this.height = height;
         this.weight = weight;
+        this.balance = balance;
     }
 
     public Integer getId() {
@@ -88,6 +91,15 @@ public class User {
         this.weight = weight;
     }
 
+    public Double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
+
+
     @Override
     public String toString() {
         return "User{" +
@@ -99,6 +111,7 @@ public class User {
                 ", sex='" + sex + '\'' +
                 ", height=" + height +
                 ", weight=" + weight +
+                ", balance=" + balance +
                 '}';
     }
 }
