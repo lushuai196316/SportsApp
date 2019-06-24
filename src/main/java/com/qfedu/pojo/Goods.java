@@ -25,6 +25,8 @@ public class Goods {
     private Integer tid;
     //图片id
     private  Integer pid;
+    //嵌套类别
+    private  GoodsType goodsType;
 
     public Integer getGid() {
         return gid;
@@ -106,6 +108,13 @@ public class Goods {
         this.pid = pid;
     }
 
+    public GoodsType getGoodsType() {
+        return goodsType;
+    }
+
+    public void setGoodsType(GoodsType goodsType) {
+        this.goodsType = goodsType;
+    }
 
     @Override
     public String toString() {
@@ -120,6 +129,7 @@ public class Goods {
                 ", material='" + material + '\'' +
                 ", tid=" + tid +
                 ", pid=" + pid +
+                ", goodsType=" + goodsType +
                 '}';
     }
 }

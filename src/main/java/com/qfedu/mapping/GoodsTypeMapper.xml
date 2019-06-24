@@ -3,8 +3,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.qfedu.dao.GoodsTypeDao">
-    <resultMap id="goodsTypeMap" type="goodsType">
-        <id column="tid" property="tid"></id>
+    <resultMap id="goodsTypeMap" type="com.qfedu.pojo.GoodsType">
+        <id column="gtid" property="tid"></id>
         <result column="tname" property="tname"></result>
     </resultMap>
-    </mapper>
+</mapper>
