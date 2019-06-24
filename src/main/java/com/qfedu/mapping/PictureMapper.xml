@@ -16,4 +16,10 @@
         insert INTO  t VALUES
         <foreach collection="rids"></foreach>
     </insert>
+
+    <select id="showPicture" resultMap="pictureMap">
+        SELECT p.path from goods g LEFT JOIN picture p on g.pid = p.id LIMIT 0,4
+    </select>
+
+
 </mapper>

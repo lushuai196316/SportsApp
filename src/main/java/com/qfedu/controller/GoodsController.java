@@ -2,7 +2,9 @@ package com.qfedu.controller;
 
 import com.qfedu.common.JsonBean;
 import com.qfedu.pojo.Goods;
+import com.qfedu.pojo.Picture;
 import com.qfedu.service.GoodsService;
+import com.qfedu.service.PictureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,9 @@ public class GoodsController {
 
     @Autowired(required = false)
     private GoodsService goodsService;
+
+    @Autowired(required = false)
+    private PictureService pictureService;
 
     //运动服饰下的所有商品
     @RequestMapping("/sportswear.do")
@@ -42,6 +47,15 @@ public class GoodsController {
     public JsonBean healthy(Integer tid) {
         List<Goods> goodsList = goodsService.sportswearAll(tid);
         return new JsonBean(0, goodsList);
+    }
+
+
+
+    //商城图片轮播
+    @RequestMapping("/showPicture.do")
+    public JsonBean showPicture(){
+        List<Picture> pictureList = pictureService.showPicture();
+        return new JsonBean(0,pictureList);
     }
 
 }
