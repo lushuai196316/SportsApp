@@ -7,6 +7,10 @@
         <id column="id" property="id"></id>
         <result column="cname" property="cname"></result>
         <result column="trainNum" property="trainNum"></result>
+        <result column="picId" property="picId"></result>
+        <association property="picture" resultMap="com.qfedu.dao.PictureDao.pictureMap">
+
+        </association>
         <collection property="courseinfoList" ofType="com.qfedu.pojo.Courseinfo">
             <id column="iid" property="iid"></id>
             <result column="iname" property="iname"></result>
@@ -17,13 +21,15 @@
     </resultMap>
 
     <select id="selectCourseById" parameterType="Integer" resultMap="courseMap">
-      SELECT A.*,i.* FROM (select c.* from user u
+
+            SELECT A.*,i.* ,p.path FROM (select c.* from user u
             LEFT JOIN userlable ul on ul.uid=u.id
             LEFT JOIN sportlabel l on ul.lid=l.id
             LEFT JOIN lablecourse lc on l.id=lc.lid
             LEFT JOIN sportcourse c on lc.cid = c.id
-            where u.id=#{id} ORDER BY c.id limit 0,1) A
+             where u.id=#{id} ORDER BY c.id limit 0,1) A
             LEFT JOIN course_info ci on A.id=ci.cid
             LEFT JOIN courseinfo i on ci.iid=i.iid
+            LEFT JOIN picture p on p.id=A.picId
     </select>
 </mapper>

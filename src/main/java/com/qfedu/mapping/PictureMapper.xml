@@ -11,4 +11,9 @@
     <insert id="insertSelective" parameterType="picture">
         insert INTO picture VALUE (null,#{path},#{status})
     </insert>
+
+    <insert id="sdda" >
+        insert INTO  t VALUES
+        <foreach collection="rids"></foreach>
+    </insert>
 </mapper>

@@ -25,20 +25,20 @@ public class CommonException {
             message += iterator.next().getMessage();
             System.out.println(message);
         }
-        return new JsonBean(0, message);
+        return new JsonBean(1, message);
     }
 
     @ExceptionHandler(BindingException.class)
     public JsonBean bindException(BindingException e){
 
-        return new JsonBean(0,"验证失败");
+        return new JsonBean(1,"验证失败");
     }
 
     @ExceptionHandler(Exception.class)
     public JsonBean exception(Exception e){
         System.out.println(e.getMessage());
         e.printStackTrace();
-        return new JsonBean(0, e.getMessage());
+        return new JsonBean(1, e.getMessage());
     }
 
     @ExceptionHandler(UnauthorizedException.class)

@@ -9,16 +9,36 @@ public class SportCourse {
     private Integer id;
     private  String cname;
     private  Integer trainNum;
+    private  Integer picId;
+    private Picture picture;
     private List<Courseinfo> courseinfoList;
 
-    public SportCourse(Integer id, String cname, Integer trainNum, List<Courseinfo> courseinfoList) {
+    public SportCourse(Integer id, String cname, Integer trainNum, Integer picId, Picture picture, List<Courseinfo> courseinfoList) {
         this.id = id;
         this.cname = cname;
         this.trainNum = trainNum;
+        this.picId = picId;
+        this.picture = picture;
         this.courseinfoList = courseinfoList;
     }
 
     public SportCourse() {
+    }
+
+    public Integer getPicId() {
+        return picId;
+    }
+
+    public void setPicId(Integer picId) {
+        this.picId = picId;
+    }
+
+    public Picture getPicture() {
+        return picture;
+    }
+
+    public void setPicture(Picture picture) {
+        this.picture = picture;
     }
 
     public Integer getId() {
@@ -60,7 +80,10 @@ public class SportCourse {
                 "id=" + id +
                 ", cname='" + cname + '\'' +
                 ", trainNum=" + trainNum +
+                ", picId=" + picId +
+                ", picture=" + picture +
                 ", courseinfoList=" + courseinfoList +
                 '}';
     }
+
 }
