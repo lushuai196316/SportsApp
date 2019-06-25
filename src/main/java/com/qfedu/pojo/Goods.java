@@ -26,7 +26,7 @@ public class Goods {
     //图片id
     private  Integer pid;
     //嵌套类别
-    private  GoodType goodsType;
+    private  GoodType goodType;
 
     public Integer getGid() {
         return gid;
@@ -108,12 +108,12 @@ public class Goods {
         this.pid = pid;
     }
 
-    public GoodType getGoodsType() {
-        return goodsType;
+    public GoodType getGoodType() {
+        return goodType;
     }
 
-    public void setGoodsType(GoodType goodsType) {
-        this.goodsType = goodsType;
+    public void setGoodType(GoodType goodType) {
+        this.goodType = goodType;
     }
 
     @Override
@@ -129,7 +129,7 @@ public class Goods {
                 ", material='" + material + '\'' +
                 ", tid=" + tid +
                 ", pid=" + pid +
-                ", goodsType=" + goodsType +
+                ", goodType=" + goodType +
                 '}';
     }
 }
