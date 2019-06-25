@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * Created by 鲁帅 on 2019/6/24.
+ * Created by Administrator on 2019/6/24 0024.
  */
 @Controller
 public class GoodsController {
@@ -27,7 +27,7 @@ public class GoodsController {
     //运动服饰下的所有商品
     @RequestMapping("/sportswear.do")
     @ResponseBody
-    public JsonBean sportswearAll( Integer tid) {
+    public JsonBean sportswearAll(Integer tid) {
         List<Goods> goodsList = goodsService.sportswearAll(tid);
         System.out.println("所有商品："+goodsList);
         return new JsonBean(0, goodsList);
@@ -59,5 +59,4 @@ public class GoodsController {
         List<Picture> pictureList = pictureService.showPicture();
         return new JsonBean(0,pictureList);
     }
-
 }

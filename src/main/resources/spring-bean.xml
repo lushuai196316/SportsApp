@@ -18,7 +18,7 @@
        </context:component-scan>-->
 	<context:component-scan base-package="com.qfedu.service.impl">
 	</context:component-scan>
-	<context:component-scan base-package="com.qfedu.utils"></context:component-scan>
+	<context:component-scan base-package="com.qfedu"></context:component-scan>
      
      <!-- 1 druid数据源 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"

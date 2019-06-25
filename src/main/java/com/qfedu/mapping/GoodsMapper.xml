@@ -14,7 +14,9 @@
         <result column="material" property="material"></result>
         <result column="tid" property="tid"></result>
         <result column="pid" property="pid"></result>
-        <association property="goodsType" resultMap="com.qfedu.dao.GoodsTypeDao.goodsTypeMap"></association>
+        <association property="goodsType" javaType="com.qfedu.pojo.GoodsType">
+            <id column="gtid" property="tid"></id>
+        </association>
     </resultMap>
 
     <select id="sportswearAll" parameterType="Integer" resultMap="goodsMap">
