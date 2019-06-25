@@ -14,8 +14,8 @@
         <result column="material" property="material"></result>
         <result column="tid" property="tid"></result>
         <result column="pid" property="pid"></result>
-        <association property="goodsType" javaType="com.qfedu.pojo.GoodsType">
-            <id column="gtid" property="tid"></id>
+        <association property="goodsType" resultMap="com.qfedu.dao.GoodsTypeDao.goodsTypeMap">
+
         </association>
     </resultMap>
 
