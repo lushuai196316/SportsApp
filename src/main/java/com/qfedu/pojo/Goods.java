@@ -26,7 +26,7 @@ public class Goods {
     //图片id
     private  Integer pid;
     //嵌套类别
-    private  GoodsType goodsType;
+    private  GoodType goodsType;
 
     public Integer getGid() {
         return gid;
@@ -108,11 +108,11 @@ public class Goods {
         this.pid = pid;
     }
 
-    public GoodsType getGoodsType() {
+    public GoodType getGoodsType() {
         return goodsType;
     }
 
-    public void setGoodsType(GoodsType goodsType) {
+    public void setGoodsType(GoodType goodsType) {
         this.goodsType = goodsType;
     }
 

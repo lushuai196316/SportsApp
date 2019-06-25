@@ -209,6 +209,7 @@
     </dependencies>
 
     <build>
+        <finalName>sportsApp</finalName>
         <resources>
             <!--需要设置打包的文件 特别是非java文件-->
             <resource>

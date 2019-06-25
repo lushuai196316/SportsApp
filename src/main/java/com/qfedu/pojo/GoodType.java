@@ -3,9 +3,8 @@ package com.qfedu.pojo;
 /**
  * Created by 鲁帅 on 2019/6/25.
  */
-public class GoodsType {
+public class GoodType {
 
-    //类别Id
     private  Integer tid;
     //类别名字
     private  String tname;
