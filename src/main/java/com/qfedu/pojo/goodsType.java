@@ -1,7 +1,7 @@
 package com.qfedu.pojo;
 
 /**
- * Created by Administrator on 2019/6/24 0024.
+ * Created by 鲁帅 on 2019/6/25.
  */
 public class GoodsType {
 
