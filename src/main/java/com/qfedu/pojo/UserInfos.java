@@ -3,8 +3,7 @@ package com.qfedu.pojo;
 /**
  * Created by 鲁帅 on 2019/6/25.
  */
-public class UserInfo {
-
+public class UserInfos {
     //收货人ID
     private Integer fid;
     //收货人姓名
@@ -68,7 +67,7 @@ public class UserInfo {
 
     @Override
     public String toString() {
-        return "UserInfo{" +
+        return "UserInfos{" +
                 "fid=" + fid +
                 ", consignee='" + consignee + '\'' +
                 ", cphone='" + cphone + '\'' +

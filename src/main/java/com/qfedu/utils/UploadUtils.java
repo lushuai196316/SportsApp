@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 @Component
 public class UploadUtils {
 
-    @Autowired
+    @Autowired(required = false)
    private PictureDao pictureDao;
 
     String accessKey;
