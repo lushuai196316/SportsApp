@@ -38,6 +38,7 @@ public class GoodsController {
     @ResponseBody
     public JsonBean equipment( Integer tid) {
         List<Goods> goodsList = goodsService.sportswearAll(tid);
+        System.out.println(goodsList);
         return new JsonBean(0, goodsList);
     }
 
