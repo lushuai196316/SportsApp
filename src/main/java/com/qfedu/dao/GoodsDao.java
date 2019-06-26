@@ -16,4 +16,6 @@ public interface GoodsDao {
     List<Goods> showGoodSAll();
 
     Goods pictureToGoods(Integer pid);
+
+    List<Goods> showCat();
 }

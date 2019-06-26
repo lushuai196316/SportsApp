@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qfedu.dao.CatDao">
+    <resultMap id="voCatMap" type="com.qfedu.vo.VoCat">
+
+    </resultMap>
+
+    <insert id="addCat" parameterType="voCat">
+        INSERT INTO cat VALUES (null,#{uid},#{gid},#{sid},#{cnum})
+    </insert>
+
+    <update id="changeCnum" parameterType="voCat" >
+        UPDATE cat set cnum=#{cnum} WHERE cid =#{cid}
+    </update>
+
+    <select id="getCnum" parameterType="voCat" resultType="Integer">
+        SELECT cnum from cat WHERE cid =#{cid}
+    </select>
+</mapper>

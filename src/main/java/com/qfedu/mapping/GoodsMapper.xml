@@ -16,6 +16,8 @@
         <result column="pid" property="pid"></result>
         <association property="goodType" resultMap="com.qfedu.dao.GoodTypeDao.goodsTypeMap"></association>
         <association property="picture" resultMap="com.qfedu.dao.PictureDao.pictureMap"></association>
+        <association property="size" resultMap="com.qfedu.dao.SizeDao.sizeMap"></association>
+        <association property="voCat" resultMap="com.qfedu.dao.CatDao.voCatMap"></association>
     </resultMap>
 
     <select id="typeToGoods" parameterType="Integer" resultMap="goodsMap">
@@ -47,4 +49,13 @@
         WHERE p.id =#{pid};
     </select>
 
+     <select id="showCat" resultMap="goodsMap">
+        select  g.*,A.cid,A.uid,A.cnum,s.*,p.path from cat A
+         left join goods g
+          on A.cid = g.gid
+         left join size s
+         on s.sid = A.sid
+         left join picture p
+         on p.id = g.pid
+     </select>
 </mapper>
