@@ -3,16 +3,16 @@ package com.qfedu.controller;
 import com.qfedu.common.JsonBean;
 import org.apache.ibatis.binding.BindingException;
 import org.apache.shiro.authz.UnauthorizedException;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import java.util.Iterator;
 
+/*
 @ControllerAdvice
 @ResponseBody
+*/
 public class CommonException {
 
     // 异常处理方法

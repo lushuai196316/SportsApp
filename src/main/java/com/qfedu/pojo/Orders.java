@@ -1,5 +1,7 @@
 package com.qfedu.pojo;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -12,6 +14,7 @@ public class Orders {
     //订单编号
     private String ordercode;
     //下单时间
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date ordertime;
     //用户Id
     private Integer uid;
