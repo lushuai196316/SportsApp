@@ -55,6 +55,7 @@ public class GoodsController {
     @RequestMapping("/picturetogoods.do")
     @ResponseBody
     public JsonBean pictureToGood(Integer pid) {
+        System.out.println("图片传来的id"+pid);
         Goods good = goodsService.pictureToGoods(pid);
         System.out.println("图片选商品："+good);
         return new JsonBean(0, good);
