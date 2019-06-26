@@ -19,4 +19,9 @@ public class PictureServiceImpl implements PictureService {
         List<Picture> list = pictureDao.showPicture();
         return list;
     }
+
+
+
+
+
 }

@@ -9,6 +9,60 @@
         <result column="cphone" property="cphone"></result>
         <result column="region" property="region"></result>
         <result column="address" property="address"></result>
+        <result column="flag" property="flag"></result>
         <result column="uid" property="uid"></result>
     </resultMap>
+
+    <!--添加地址 是否设为默认-->
+    <insert id="addAddress" parameterType="userInfos" >
+        INSERT into userinfo(consignee,cphone,region,address,flag,uid)VALUES(#{consignee},#{cphone},#{region},#{address},#{flag},#{uid})
+    </insert>
+
+
+    <!--删除地址-->
+    <delete id="deleteAddress" parameterType="Integer">
+        delete from userinfo where fid=#{fid}
+    </delete>
+
+
+    <!--查找要修改的地址-->
+    <select id="selectAddressById" parameterType="Integer" resultMap="userInfosMap">
+        select * from userinfo WHERE fid=#{fid}
+    </select>
+
+    <!--修改状态-->
+    <update id="editAddressFlag">
+         update userinfo set flag=1
+    </update>
+    <!--修改地址-->
+    <update id="editAddress" parameterType="userInfos">
+       update userinfo
+        <set>
+            <if test="consignee!=null and consignee !=''">
+                consignee=#{consignee},
+            </if>
+            <if test="cphone!=null and cphone !=''">
+                cphone=#{cphone},
+            </if>
+            <if test="region!=null and region !=''">
+                region=#{region},
+            </if>
+            <if test="address!=null and address !=''">
+                address=#{address},
+            </if>
+            <if test="flag!=null">
+                flag=#{flag}
+            </if>
+            <if test="uid!=null">
+                uid=#{uid}
+            </if>
+        </set>
+        WHERE fid=#{fid}
+    </update>
+
+    <!--查询所有收货地址-->
+    <select id="findaddressAll" resultMap="userInfosMap">
+         select * from userinfo
+    </select>
+
 </mapper>

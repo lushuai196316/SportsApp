@@ -24,30 +24,12 @@ public class GoodsController {
     @Autowired(required = false)
     private PictureService pictureService;
 
-    //运动服饰下的所有商品
-    @RequestMapping("/sportswear.do")
+    //类别下的所有商品
+    @RequestMapping("/typetogoods.do")
     @ResponseBody
-    public JsonBean sportswearAll(Integer tid) {
-        List<Goods> goodsList = goodsService.sportswearAll(tid);
-        System.out.println("所有商品："+goodsList);
-        return new JsonBean(0, goodsList);
-    }
-
-    //运动装备下的所有商品
-    @RequestMapping("/equipment.do")
-    @ResponseBody
-    public JsonBean equipment( Integer tid) {
-        List<Goods> goodsList = goodsService.sportswearAll(tid);
-        System.out.println(goodsList);
-        return new JsonBean(0, goodsList);
-    }
-
-
-    //健康食品下的所有商品
-    @RequestMapping("/healthy.do")
-    @ResponseBody
-    public JsonBean healthy(Integer tid) {
-        List<Goods> goodsList = goodsService.sportswearAll(tid);
+    public JsonBean typeToGoods(Integer tid) {
+        List<Goods> goodsList = goodsService.typeToGoods(tid);
+        System.out.println("根据类别找所有的商品："+goodsList);
         return new JsonBean(0, goodsList);
     }
 
@@ -60,4 +42,24 @@ public class GoodsController {
         List<Picture> pictureList = pictureService.showPicture();
         return new JsonBean(0,pictureList);
     }
+
+    //热门推荐
+    @RequestMapping("/hot.do")
+    @ResponseBody
+    public JsonBean hot(){
+        List<Goods> pictureList = goodsService.showGoodSAll();
+        return new JsonBean(0,pictureList);
+    }
+
+    //根据图片选出对应的商品
+    @RequestMapping("/picturetogoods.do")
+    @ResponseBody
+    public JsonBean pictureToGood(Integer pid) {
+        Goods good = goodsService.pictureToGoods(pid);
+        System.out.println("图片选商品："+good);
+        return new JsonBean(0, good);
+    }
+
+
+
 }

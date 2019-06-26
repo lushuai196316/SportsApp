@@ -1,13 +1,13 @@
-package com.qfedu.dao;
+package com.qfedu.service;
 
 import com.qfedu.pojo.UserInfos;
 
 import java.util.List;
 
 /**
- * Created by 鲁帅 on 2019/6/25.
+ * Created by Administrator on 2019/6/25 0025.
  */
-public interface UserInfosDao {
+public interface UserInfoService {
 
     void addAddress(UserInfos userInfos);
 

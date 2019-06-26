@@ -21,9 +21,21 @@ public class GoodsServiceImpl implements GoodsService {
 
 
     @Override
-    public List<Goods> sportswearAll(Integer tid) {
-        List<Goods> goodsList=  goodsDao.sportswearAll(tid);
+    public List<Goods> typeToGoods(Integer tid) {
+        List<Goods> goodsList=  goodsDao.typeToGoods(tid);
         return goodsList;
     }
 
+    @Override
+    public List<Goods> showGoodSAll() {
+        List<Goods> goodsList= goodsDao.showGoodSAll();
+        return goodsList;
+    }
+
+    //根据图片Id找出对应的商品
+    @Override
+    public Goods pictureToGoods(Integer pid) {
+        Goods good = goodsDao.pictureToGoods(pid);
+        return good;
+    }
 }

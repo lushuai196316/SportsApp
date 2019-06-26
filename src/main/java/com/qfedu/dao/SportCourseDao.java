@@ -8,5 +8,5 @@ import java.util.List;
  * Created by 鲁帅 on 2019/6/21.
  */
 public interface SportCourseDao {
-    List<SportCourse> selectCourseById(Integer id);
+    List<SportCourse> selectCourseById(Integer uid);
 }

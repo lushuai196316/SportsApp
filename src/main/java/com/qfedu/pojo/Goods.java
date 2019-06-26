@@ -27,6 +27,8 @@ public class Goods {
     private  Integer pid;
     //嵌套类别
     private  GoodType goodType;
+    //嵌套图片
+    private Picture picture;
 
     public Integer getGid() {
         return gid;
@@ -116,6 +118,14 @@ public class Goods {
         this.goodType = goodType;
     }
 
+    public Picture getPicture() {
+        return picture;
+    }
+
+    public void setPicture(Picture picture) {
+        this.picture = picture;
+    }
+
     @Override
     public String toString() {
         return "Goods{" +
@@ -130,6 +140,7 @@ public class Goods {
                 ", tid=" + tid +
                 ", pid=" + pid +
                 ", goodType=" + goodType +
+                ", picture=" + picture +
                 '}';
     }
 }

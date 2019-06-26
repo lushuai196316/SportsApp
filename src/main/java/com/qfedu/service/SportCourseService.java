@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface SportCourseService {
 
-    List<SportCourse> selectCourseById(Integer id);
+    List<SportCourse> selectCourseById(Integer uid);
 }

@@ -14,14 +14,33 @@
         <result column="material" property="material"></result>
         <result column="tid" property="tid"></result>
         <result column="pid" property="pid"></result>
-        <association property="goodType" resultMap="com.qfedu.dao.GoodTypeDao.goodsTypeMap">
-
-        </association>
+        <association property="goodType" resultMap="com.qfedu.dao.GoodTypeDao.goodsTypeMap"></association>
+        <association property="picture" resultMap="com.qfedu.dao.PictureDao.pictureMap"></association>
     </resultMap>
 
-    <select id="sportswearAll" parameterType="Integer" resultMap="goodsMap">
-        select g.*,gt.tname,gt.tid gtid from goods g,goodstype gt
-        where g.tid = gt.tid and g.tid = #{tid}
+    <select id="typeToGoods" parameterType="Integer" resultMap="goodsMap">
+
+        select g.*,gt.tname,gt.tid gtid ,p.path from goods g
+        INNER JOIN goodstype gt
+        on g.tid = gt.tid
+        INNER JOIN picture p
+        on p.id = g.pid
+        where  g.tid = #{tid}
+
+    </select>
+
+    <select id="showGoodSAll" resultMap="goodsMap">
+         select g.*,gt.tname,gt.tid gtid from goods g,goodstype gt
+        where g.tid = gt.tid limit 0,4
+    </select>
+
+
+    <select id="pictureToGoods" parameterType="Integer" resultMap="goodsMap">
+        SELECT * from picture p
+        INNER JOIN (select g.*,gt.tname,gt.tid gtid from goods g,goodstype gt
+        where g.tid = gt.tid) a
+        on p.id=a.pid
+        WHERE p.id =#{pid};
     </select>
 
 </mapper>

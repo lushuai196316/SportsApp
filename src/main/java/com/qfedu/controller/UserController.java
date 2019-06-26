@@ -78,12 +78,12 @@ public class UserController {
     //修改密码
     @RequestMapping("/modifierPassword.do")
     @ResponseBody
-    public JsonBean modifierPassword(String verCode1, User user1) {
+    public JsonBean modifierPassword(String verCode1, User user) {
         if (verCode.equals(verCode1)) {
-            User user = userService.checkUser(user1.getUsername(), null);
-            if (user != null) {
+            User user1 = userService.checkUser(user.getUsername(), null);
+            if (user1 != null) {
                 //存在
-                userService.modifierUser(user1);
+                userService.modifierUser(user);
                 return new JsonBean(0, "修改成功");
             } else {
                 return new JsonBean(1, "用户名不存在");
@@ -116,9 +116,9 @@ public class UserController {
     //选择运动标签，并且根据用户id,选择合适的课程
     @RequestMapping("/chooseLable.do")
     @ResponseBody
-    public JsonBean chooseLable(Integer id, Integer[] lids) {
-        userService.insertLables(id, lids);
-        List<SportCourse> sportCourseList = sportCourseService.selectCourseById(id);
+    public JsonBean chooseLable(Integer uid, Integer[] lids) {
+        userService.insertLables(uid, lids);
+        List<SportCourse> sportCourseList = sportCourseService.selectCourseById(uid);
         System.out.println(sportCourseList);
         return new JsonBean(0,sportCourseList);
     }

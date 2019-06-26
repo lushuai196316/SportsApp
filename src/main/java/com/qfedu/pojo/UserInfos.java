@@ -14,6 +14,8 @@ public class UserInfos {
     private  String region;
     //收货人详细地址
     private  String address;
+    //是否为默认地址 0:默认地址  1：不是默认地址
+    private Integer flag;
     //用户Id
     private  Integer uid;
 
@@ -65,6 +67,14 @@ public class UserInfos {
         this.uid = uid;
     }
 
+    public Integer getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Integer flag) {
+        this.flag = flag;
+    }
+
     @Override
     public String toString() {
         return "UserInfos{" +
@@ -73,6 +83,7 @@ public class UserInfos {
                 ", cphone='" + cphone + '\'' +
                 ", region='" + region + '\'' +
                 ", address='" + address + '\'' +
+                ", flag=" + flag +
                 ", uid=" + uid +
                 '}';
     }

@@ -1,7 +1,7 @@
 package com.qfedu.pojo;
 
 public class User {
-    private Integer id;
+    private Integer uid;
     private String username;
     private String password;
     private String nickname;
@@ -15,8 +15,8 @@ public class User {
     public User() {
     }
 
-    public User(Integer id, String username, String password, String nickname, Integer picId, String sex, Integer height, Double weight, Double balance) {
-        this.id = id;
+    public User(Integer uid, String username, String password, String nickname, Integer picId, String sex, Integer height, Double weight, Double balance) {
+        this.uid = uid;
         this.username = username;
         this.password = password;
         this.nickname = nickname;
@@ -27,12 +27,12 @@ public class User {
         this.balance = balance;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getUid() {
+        return uid;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 
     public String getUsername() {
@@ -103,7 +103,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "uid=" + uid +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", nickname='" + nickname + '\'' +

@@ -44,6 +44,7 @@ public class Picture {
         this.status = status;
     }
 
+
     @Override
     public String toString() {
         return "Picture{" +

@@ -11,5 +11,9 @@ import java.util.List;
  */
 public interface GoodsDao {
 
-    List<Goods> sportswearAll(Integer tid);
+    List<Goods> typeToGoods(Integer tid);
+
+    List<Goods> showGoodSAll();
+
+    Goods pictureToGoods(Integer pid);
 }

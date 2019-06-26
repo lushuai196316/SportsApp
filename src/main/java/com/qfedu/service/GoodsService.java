@@ -9,6 +9,9 @@ import java.util.List;
  */
 public interface GoodsService {
 
-    List<Goods> sportswearAll(Integer tid);
+    List<Goods> typeToGoods(Integer tid);
 
+    List<Goods> showGoodSAll();
+
+    Goods pictureToGoods(Integer pid);
 }

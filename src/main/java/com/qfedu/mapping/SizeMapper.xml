@@ -7,4 +7,7 @@
         <id column="sid" property="sid"></id>
         <result column="sname" property="sname"></result>
     </resultMap>
+    <select id="sizeAll" resultMap="sizeMap">
+        select * from size
+    </select>
     </mapper>

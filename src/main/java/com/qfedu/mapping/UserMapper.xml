@@ -25,19 +25,19 @@
 		UPDATE user
 		<set>
 			<if test="password!=null and password !=''">
-				password=#{password}
+				password=#{password},
 			</if>
 			<if test="nickname!=null and nickname !=''">
-				nickname=#{nickname}
+				nickname=#{nickname},
 			</if>
 			<if test="picId!=null and picId !=''">
-				picId=#{picId}
+				picId=#{picId},
 			</if>
 			<if test="sex!=null and sex !=''">
-				sex=#{sex}
+				sex=#{sex},
 			</if>
 			<if test="height!=null and height !=''">
-				height=#{height}
+				height=#{height},
 			</if>
 			<if test="weight!=null and weight !=''">
 				weight=#{weight}
@@ -49,7 +49,7 @@
 	<insert id="insertLables">
 		INSERT INTO userlable VALUES
 		<foreach collection="lids" item="lid" index="index" separator="," >
-			(#{id},#{lid})
+			(#{uid},#{lid})
 		</foreach>
 	</insert>
 

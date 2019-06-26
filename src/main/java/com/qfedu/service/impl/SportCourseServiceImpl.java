@@ -18,8 +18,8 @@ public class SportCourseServiceImpl implements SportCourseService {
 
 
        @Override
-       public List<SportCourse> selectCourseById(Integer id) {
+       public List<SportCourse> selectCourseById(Integer uid) {
               System.out.println("aaaaaaaaaaaaaaaaa");
-              return sportCourseDao.selectCourseById(id);
+              return sportCourseDao.selectCourseById(uid);
        }
 }
