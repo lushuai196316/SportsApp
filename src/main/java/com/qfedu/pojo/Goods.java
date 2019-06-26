@@ -1,5 +1,7 @@
 package com.qfedu.pojo;
 
+import com.qfedu.vo.VoCat;
+
 /**
  * Created by Administrator on 2019/6/24 0024.
  */
@@ -29,6 +31,8 @@ public class Goods {
     private  GoodType goodType;
     //嵌套图片
     private Picture picture;
+    private Size size;
+    private VoCat voCat;
 
     public Integer getGid() {
         return gid;
@@ -126,6 +130,22 @@ public class Goods {
         this.picture = picture;
     }
 
+    public Size getSize() {
+        return size;
+    }
+
+    public void setSize(Size size) {
+        this.size = size;
+    }
+
+    public VoCat getVoCat() {
+        return voCat;
+    }
+
+    public void setVoCat(VoCat voCat) {
+        this.voCat = voCat;
+    }
+
     @Override
     public String toString() {
         return "Goods{" +
@@ -141,6 +161,8 @@ public class Goods {
                 ", pid=" + pid +
                 ", goodType=" + goodType +
                 ", picture=" + picture +
+                ", size=" + size +
+                ", voCat=" + voCat +
                 '}';
     }
 }
