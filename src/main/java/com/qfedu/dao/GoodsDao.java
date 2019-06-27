@@ -17,5 +17,5 @@ public interface GoodsDao {
 
     Goods pictureToGoods(Integer pid);
 
-    List<Goods> showCat();
+    List<Goods> showCat(Integer uid);
 }

@@ -4,7 +4,11 @@
 
 <mapper namespace="com.qfedu.dao.CatDao">
     <resultMap id="voCatMap" type="com.qfedu.vo.VoCat">
-
+        <id column="cid" property="cid"></id>
+         <result column="cnum" property="cnum"></result>
+        <result property="gid" column="gid"></result>
+        <result column="sid" property="sid"></result>
+        <result property="uid" column="uid"></result>
     </resultMap>
 
     <insert id="addCat" parameterType="voCat">

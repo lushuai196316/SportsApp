@@ -20,7 +20,24 @@ public class Orders {
     private Integer uid;
     //用户I状态
     private Integer status;
+    private Double oprice;
+    private Integer fid;
 
+    public Double getOprice() {
+        return oprice;
+    }
+
+    public void setOprice(Double oprice) {
+        this.oprice = oprice;
+    }
+
+    public Integer getFid() {
+        return fid;
+    }
+
+    public void setFid(Integer fid) {
+        this.fid = fid;
+    }
 
     public Integer getOid() {
         return oid;
@@ -71,6 +88,8 @@ public class Orders {
                 ", ordertime=" + ordertime +
                 ", uid=" + uid +
                 ", status=" + status +
+                ", oprice=" + oprice +
+                ", fid=" + fid +
                 '}';
     }
 }

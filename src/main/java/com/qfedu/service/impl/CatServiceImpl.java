@@ -27,8 +27,8 @@ public class CatServiceImpl implements CatService{
     }
 
     @Override
-    public List<Goods> showCat() {
-        return goodsDao.showCat();
+    public List<Goods> showCat(Integer uid) {
+        return goodsDao.showCat(uid);
     }
 
     @Override

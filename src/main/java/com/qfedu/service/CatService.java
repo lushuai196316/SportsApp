@@ -11,7 +11,7 @@ import java.util.List;
 public interface CatService {
     void addCat(VoCat voCat);
 
-    List<Goods> showCat();
+    List<Goods> showCat(Integer uid);
 
     void changeNum(VoCat voCat);
 

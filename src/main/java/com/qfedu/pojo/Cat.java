@@ -31,4 +31,12 @@ public class Cat {
     public void setCnum(Integer cnum) {
         this.cnum = cnum;
     }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "cid=" + cid +
+                ", cnum=" + cnum +
+                '}';
+    }
 }
