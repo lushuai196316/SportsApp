@@ -40,4 +40,9 @@ public class CatServiceImpl implements CatService{
     public Integer getCnum(VoCat voCat) {
         return  catDao.getCnum(voCat);
     }
+
+    @Override
+    public void delCatById(Integer[] cids) {
+        catDao.delCatById(cids);
+    }
 }

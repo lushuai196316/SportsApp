@@ -22,6 +22,42 @@ public class Orders {
     private Integer status;
     private Double oprice;
     private Integer fid;
+    private Integer sid;
+    private Integer gid;
+    private Integer onum;
+    private Goods goods;
+
+    public Goods getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Goods goods) {
+        this.goods = goods;
+    }
+
+    public Integer getSid() {
+        return sid;
+    }
+
+    public void setSid(Integer sid) {
+        this.sid = sid;
+    }
+
+    public Integer getGid() {
+        return gid;
+    }
+
+    public void setGid(Integer gid) {
+        this.gid = gid;
+    }
+
+    public Integer getOnum() {
+        return onum;
+    }
+
+    public void setOnum(Integer onum) {
+        this.onum = onum;
+    }
 
     public Double getOprice() {
         return oprice;
@@ -79,7 +115,6 @@ public class Orders {
         this.status = status;
     }
 
-
     @Override
     public String toString() {
         return "Orders{" +
@@ -90,6 +125,10 @@ public class Orders {
                 ", status=" + status +
                 ", oprice=" + oprice +
                 ", fid=" + fid +
+                ", sid=" + sid +
+                ", gid=" + gid +
+                ", onum=" + onum +
+                ", goods=" + goods +
                 '}';
     }
 }

@@ -26,9 +26,8 @@
 	</context:component-scan>-->
     <context:component-scan base-package="com.qfedu.controller">
     </context:component-scan>
-    <context:component-scan base-package="com.qfedu"></context:component-scan>
-    
-    
+   <context:component-scan base-package="com.qfedu.utils"></context:component-scan>
+
     <!-- 引入验证器 -->
     <mvc:annotation-driven>
     	<!-- 处理json里的日期数据，默认日期被fastjson转为时间戳数据 -->

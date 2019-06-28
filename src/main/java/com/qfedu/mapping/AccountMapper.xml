@@ -10,4 +10,9 @@
     <result column="apassword" property="apassword"></result>
     <result column="balance" property="balance"></result>
 </resultMap>
+
+
+    <update id="receiptMoney" parameterType="map">
+        UPDATE account set balance = balance+#{money} WHERE aid=#{aid}
+    </update>
 </mapper>

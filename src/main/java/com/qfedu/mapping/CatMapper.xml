@@ -22,4 +22,11 @@
     <select id="getCnum" parameterType="voCat" resultType="Integer">
         SELECT cnum from cat WHERE cid =#{cid}
     </select>
+
+    <delete id="delCatById" parameterType="map">
+        DELETE from cat where cid in
+        <foreach collection="cids" item="cid" index="index" open="(" separator="," close=")">
+            #{cid}
+        </foreach>
+    </delete>
 </mapper>

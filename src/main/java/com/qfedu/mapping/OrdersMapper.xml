@@ -6,8 +6,39 @@
     <resultMap id="ordersMap" type="orders">
         <id column="oid" property="oid"></id>
         <result column="ordercode" property="ordercode"></result>
+        <result column="oprice" property="oprice"></result>
         <result column="ordertime" property="ordertime"></result>
+        <result column="fid" property="fid"></result>
         <result column="uid" property="uid"></result>
+        <result column="onum" property="onum"></result>
+        <result column="sid" property="sid"></result>
+        <result column="gid" property="gid"></result>
         <result column="status" property="status"></result>
+
+        <association property="goods" resultMap="com.qfedu.dao.GoodsDao.goodsMap"></association>
+
     </resultMap>
+
+    <insert id="paymentOne" parameterType="orders">
+        INSERT INTO  orders (ordercode,oprice,fid,uid,sid,gid,status)VALUES (#{ordercode},#{oprice},#{fid},#{uid},#{sid},#{gid},#{status})
+    </insert>
+
+    <insert id="paymentByCat" parameterType="list">
+        INSERT INTO  orders (ordercode,oprice,fid,uid,sid,gid,status)VALUES
+        <foreach collection="ordersList" item="orders" separator=",">
+            (#{orders.ordercode},#{orders.oprice},#{orders.fid},#{orders.uid},#{orders.sid},#{orders.gid},#{orders.status})
+        </foreach>
+    </insert>
+
+    <select id="showOrders" parameterType="Integer" resultMap="ordersMap">
+       SELECT o.*,g.gname,s.sname ,p.* from orders o
+        LEFT JOIN goods g on g.gid =o.gid
+        LEFT JOIN size s on s.sid = o.sid
+        LEFT JOIN picture p on p.id =g.pid
+        WHERE o.uid=#{uid}
+    </select>
+
+    <delete id="deleteOrders" parameterType="orders">
+        DELETE FROM orders WHERE oid=#{oid} and uid=#{uid}
+    </delete>
 </mapper>

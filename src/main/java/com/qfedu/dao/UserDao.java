@@ -25,4 +25,6 @@ public interface UserDao {
     void insertLables(@Param("id") Integer id, @Param("lids") Integer[] lids);
 
     List<SportLable> showLable();
+
+    void pay(@Param("uid") Integer uid,@Param("money") Double money);
 }

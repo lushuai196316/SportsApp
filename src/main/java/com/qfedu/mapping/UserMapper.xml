@@ -56,4 +56,8 @@
 	<select id="showLable" resultType="com.qfedu.pojo.SportLable">
 		SELECT * from  sportlabel
 	</select>
+
+	<update id="pay" parameterType="map">
+		UPDATE user set balance=balance-#{money} WHERE uid=#{uid}
+	</update>
 </mapper>

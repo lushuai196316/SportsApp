@@ -6,8 +6,6 @@ package com.qfedu.pojo;
 public class Account {
     private Integer aid;
     private String aname;
-    private  String card;
-    private  String apassword;
     private Double balance;
 
     public Integer getAid() {
@@ -26,21 +24,6 @@ public class Account {
         this.aname = aname;
     }
 
-    public String getCard() {
-        return card;
-    }
-
-    public void setCard(String card) {
-        this.card = card;
-    }
-
-    public String getApassword() {
-        return apassword;
-    }
-
-    public void setApassword(String apassword) {
-        this.apassword = apassword;
-    }
 
     public Double getBalance() {
         return balance;
@@ -56,8 +39,6 @@ public class Account {
         return "Account{" +
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
-                ", card='" + card + '\'' +
-                ", apassword='" + apassword + '\'' +
                 ", balance=" + balance +
                 '}';
     }

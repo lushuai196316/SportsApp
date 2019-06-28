@@ -16,4 +16,6 @@ public interface CatService {
     void changeNum(VoCat voCat);
 
     Integer getCnum(VoCat voCat);
+
+    void delCatById(Integer[] cids);
 }
